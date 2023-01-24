@@ -1,8 +1,13 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
+import Image from 'react-bootstrap/Image'
+import Logo from "../../assets/mc_logo.jpg"
 
 const ImageSide = () => {
   return (
-    <div> ImageSide</div>
+    <Container>
+        <Image src={Logo} alt="logo_image"/>
+    </Container>
   )
 }
 

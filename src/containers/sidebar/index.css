@@ -1,0 +1,9 @@
+.sidebar{
+    max-width: 400px;
+    min-width: 360px;
+    height: 100vh;
+    background: #51438F;
+}
+/* .active{
+    background: red !important;
+} */

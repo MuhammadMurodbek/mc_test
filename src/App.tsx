@@ -1,15 +1,14 @@
-import { useState } from 'react'
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Auth from './pages/auth';
-import {Route, Routes, redirect } from 'react-router-dom';
-function App() {
+import React from 'react'
+import {Route, Routes} from "react-router-dom"
+import Dashboard from './pages/dashboard'
 
+const App = () => {
   return (
-    <Routes>
-       <Route path='/login' element={<Auth/>}/>
-       <Route path='/dashboard' element={null}/>
-    </Routes>
+    <div>
+      <Routes>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+      </Routes>
+    </div>
   )
 }
 

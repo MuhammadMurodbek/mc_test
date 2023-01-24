@@ -1,14 +1,46 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
-import { BrowserRouter } from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import App from "./App"
+import "./index.css"
+import AuthPage from "./pages/auth";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Dashboard from "./pages/dashboard";
+import Layout from "./containers/layout";
+import NotFound from "./pages/not.found";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const mappedRouter = [
+  {
+    path: "/",
+    element: <App/>
+  },
+  {
+    path:'/login',
+    element: <AuthPage/>
+  },
+  {
+    path:'/users',
+    element: <Dashboard/>
+  },
+  {
+    path:'*',
+    element:<NotFound/>
+  }
+].map(item=>{
+  if(item.path === '/login') return item
+  return{
+    ...item,
+    element: <Layout>{item.element}</Layout>
+  }
+})
+
+const router = createBrowserRouter(mappedRouter);
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-    
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
