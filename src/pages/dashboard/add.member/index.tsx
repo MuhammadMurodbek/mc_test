@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { toast } from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
+import { postLogin } from '../../../../redux/actions/login';
 import { addMemberRequest } from '../../../_helpers/add.member';
 
 interface TPropsModal {
@@ -17,15 +20,21 @@ interface TStateModal {
 }
 
 function ModalAdd({ modalState, setModalState }: TPropsModal) {
+    const dispatch = useDispatch()
     const [state, setState] = useState<TStateModal>({ name: '', email: '', contact: '', check:false })
     const [loading, setLoading] = useState<boolean>(false)
     const handleClose = () => setModalState(false);
     const handleFormData = (name: string, value: string | boolean) => {
         setState((prev: TStateModal) => { return { ...prev, id:uuid(), [name]: value } })
     }
+    const submitFunction = () => {
+        handleClose()
+        dispatch(postLogin())
+        setLoading(false)
+    }
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        addMemberRequest(state, setLoading)
+        addMemberRequest(state, setLoading, submitFunction)
     }
 
     return (
@@ -49,6 +58,7 @@ function ModalAdd({ modalState, setModalState }: TPropsModal) {
                             Close
                         </Button>
                         <Button variant="primary" type="submit">
+                            {loading && <i className="fa fa-spinner fa-spin"></i>}
                             Save Changes
                         </Button>
                     </Modal.Footer>

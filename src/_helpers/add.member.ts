@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 export const head_token = {
 	headers: {
@@ -9,11 +10,12 @@ export const head_token = {
 export const addMemberRequest = async (
 	data: any,
 	setLoading: React.Dispatch<React.SetStateAction<boolean>>,
+    submitFunction:()=>void
 ) => {
 	setLoading(true);
 	return await axios
 		.post(`http://localhost:3000/usersall`, data, head_token)
-		.then(() => {})
+		.then(() => {toast('Successfully added')})
 		.catch((err) => console.log(err.response))
-		.finally(() => setLoading(false));
+		.finally(() => submitFunction());
 };

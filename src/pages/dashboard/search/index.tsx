@@ -29,12 +29,12 @@ const SearchField = () => {
 	}
 	return (
 		<div className="d-flex flex-row gap-3 my-4 m-left-auto w-75">
-			<Form.Control type="text" placeholder="text" value={state.name} onChange={(e) => handleFormData('name', e.target.value)} />
-			<Form.Control type="text" placeholder="text" value={state.email} onChange={(e) => handleFormData('email', e.target.value)} />
-			<Form.Control type="text" placeholder="text" value={state.contact} onChange={(e) => handleFormData('contact', e.target.value)} />
+			<Form.Control type="text" placeholder="Name" value={state.name} onChange={(e) => handleFormData('name', e.target.value)} />
+			<Form.Control type="email" placeholder="Email" value={state.email} onChange={(e) => handleFormData('email', e.target.value)} />
+			<Form.Control type="text" placeholder="Contact" value={state.contact} onChange={(e) => handleFormData('contact', e.target.value)} />
 			<Form.Select value={state?.check ? 'yes' : 'no'} onChange={(e) => handleFormData('check', e.target.value)} aria-label="Default select example">
-				<option value='yes'>Yes</option>
-				<option value='no'>No</option>
+				<option value='yes'>Active</option>
+				<option value='no'>Inactive</option>
 			</Form.Select>
 			<Button onClick={handleSubmit} className="px-5">search</Button>
 		</div>
