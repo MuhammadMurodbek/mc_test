@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import ModalEdit from './modal.edit';
 import ModalRemove from './modal.remove';
 import { useDispatch, useSelector } from 'react-redux';
-import { postLogin } from "../../../../redux/actions/login"
+import { actionStart } from "../../../../redux/actions/login"
 import ImageContainer from '../../../containers/image';
 import Status from '../../../containers/status';
 
@@ -15,9 +15,9 @@ export type ModalStateProps = {
 const ListData = () => {
 
 	const dispatch = useDispatch()
-	useEffect(() => { dispatch(postLogin()) }, [dispatch])
+	useEffect(() => { dispatch(actionStart()) }, [dispatch])
 
-	const listData = (state: any) => state?.loginPostReducer
+	const listData = (state: any) => state?.actionListReducer
 	const selector = useSelector(listData)
 
 	const [showModalRemove, setShowModalRemove] = useState<ModalStateProps>({
@@ -41,7 +41,7 @@ const ListData = () => {
 	}
 	return (
 		<div className='table-wrapper'>{
-			selector?.loginStart ?
+			selector?.actionStart ?
 				<h1 className='text-center'> 
 					<i className="fa fa-spinner fa-spin text-info"></i>
 				</h1> :
@@ -60,7 +60,7 @@ const ListData = () => {
 
 					<tbody>
 						{
-							selector?.loginSuccessData?.map((item: any, index: number) => (
+							selector?.actionSuccessData?.map((item: any, index: number) => (
 								<tr key={index}>
 									<td><ImageContainer /></td>
 									<td>{item?.name}</td>

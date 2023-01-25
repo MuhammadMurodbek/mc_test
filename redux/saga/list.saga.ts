@@ -1,6 +1,6 @@
 import { takeLatest, put, call, all } from "redux-saga/effects";
 import api from "../config/request.params";
-import {postLoginFail, postLoginSuccess} from "../actions/login";
+import {actionFail, actionSuccess} from "../actions/login";
 import {constantActions} from "../config/constants";
 
 export interface ResponseGenerator{
@@ -11,7 +11,7 @@ export interface ResponseGenerator{
     status?:number,
     statusText?:string
 }
-const {LOGIN_START} = constantActions
+const {ACTION_START} = constantActions
 export function* getArticles({ payload, query }:any) {
     try {
         const url = query?.length ? `http://localhost:3000/usersall/?${query}`:'http://localhost:3000/usersall/'
@@ -22,13 +22,13 @@ export function* getArticles({ payload, query }:any) {
             },
             params: payload,
         });
-        yield put(postLoginSuccess(response.data));
+        yield put(actionSuccess(response.data));
     } catch (e:any) {
-        yield put(postLoginFail(e.response));
+        yield put(actionFail(e.response));
     }
 }
 export function* getArticlesStart() {
-    yield takeLatest(LOGIN_START, getArticles);
+    yield takeLatest(ACTION_START, getArticles);
 }
 
 export function* articlesSagas() {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
-import { postLogin } from '../../../../redux/actions/login';
+import { actionStart } from '../../../../redux/actions/login';
 import { CleanObj } from '../../../_helpers/query.maker';
 
 interface TStateModal {
@@ -25,9 +25,9 @@ const SearchField = () => {
 	const handleSubmit = () => {
 		let queries: any = CleanObj(state)
 		let objQuery = new URLSearchParams(queries).toString()
-		dispatch(postLogin(objQuery))
+		dispatch(actionStart(objQuery))
 	}
-	const handleReload = () => dispatch(postLogin())
+	const handleReload = () => dispatch(actionStart())
 	return (
 		<div className="d-flex flex-row gap-3 my-4 m-left-auto w-100">
 			<Form.Control type="text" placeholder="Name" value={state.name} onChange={(e) => handleFormData('name', e.target.value)} />

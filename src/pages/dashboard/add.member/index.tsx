@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
-import { postLogin } from '../../../../redux/actions/login';
+import { actionStart } from '../../../../redux/actions/login';
 import { addMemberRequest } from '../../../_helpers/add.member';
 
 interface TPropsModal {
@@ -29,7 +29,7 @@ function ModalAdd({ modalState, setModalState }: TPropsModal) {
     }
     const submitFunction = () => {
         handleClose()
-        dispatch(postLogin())
+        dispatch(actionStart())
         setLoading(false)
     }
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

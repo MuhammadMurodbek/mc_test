@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import loginPostReducer from './login';
+import actionListReducer from './listMembers';
 
 export const rootReducer = combineReducers({
-	loginPostReducer,
+	actionListReducer,
 });

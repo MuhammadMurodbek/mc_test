@@ -1,13 +1,6 @@
 {
   "usersall": [
     {
-      "name": "sdfsdfgsddggfsdgdgdrtrtrt",
-      "email": "murodmuhammad277@gmail.com",
-      "contact": "rr",
-      "check": true,
-      "id": "c3d883a3-eec4-656f-b43f-64d9613afaea"
-    },
-    {
       "name": "asadulloh",
       "email": "murodmuhammad277@gmail.com",
       "contact": "3435234134",
@@ -34,6 +27,13 @@
       "contact": "asdf",
       "check": false,
       "id": "f6f6bd9d-53b6-aa85-e888-4aa8c568eafa"
+    },
+    {
+      "name": "",
+      "email": "",
+      "contact": "",
+      "check": false,
+      "id": "rJSg3vV"
     }
   ]
 }

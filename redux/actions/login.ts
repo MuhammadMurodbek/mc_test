@@ -1,23 +1,23 @@
 import { constantActions } from "../config/constants";
-const {LOGIN_START, LOGIN_FAIL, LOGIN_SUCCESS, LOGIN_SEARCH} = constantActions
+const {ACTION_START, ACTION_FAIL, ACTION_SUCCESS} = constantActions
 
-export const postLogin = (query?:string) => {
+export const actionStart = (query?:string) => {
     return {
-        type: LOGIN_START,
+        type: ACTION_START,
         query
     };
 };
 
-export const postLoginSuccess = (data:any) => {
+export const actionSuccess = (data:any) => {
     return {
-        type: LOGIN_SUCCESS,
+        type: ACTION_SUCCESS,
         payload: data,
     };
 };
 
-export const postLoginFail = (data:any) => {
+export const actionFail = (data:any) => {
     return {
-        type: LOGIN_FAIL,
+        type: ACTION_FAIL,
         payload: data,
     };
 };
