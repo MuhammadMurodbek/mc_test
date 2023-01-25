@@ -3,10 +3,6 @@ const { LOGIN_FAIL, LOGIN_START, LOGIN_SUCCESS, LOGIN_SEARCH } = constantActions
 
 const initialState = {
 	loginStart: false,
-	articlesSuccess: false,
-	articlesSuccessData: [],
-	articlesFailData: [],
-	articleUserParams: [],
 	paramsData: {
 		name: '',
 		email: '',

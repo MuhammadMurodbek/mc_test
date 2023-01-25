@@ -21,10 +21,3 @@ export const postLoginFail = (data:any) => {
         payload: data,
     };
 };
-
-// export const searchMembers = (query:string) => {
-//     return {
-//         type: LOGIN_SEARCH,
-//         query:query
-//     };
-// };
