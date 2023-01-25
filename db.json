@@ -1,6 +1,6 @@
 {
   "login": {
-    "name": "asdf",
+    "name": "sadf",
     "contact": "asdf",
     "email": "murodmuhammad277@gmail.com"
   },
@@ -11,41 +11,6 @@
       "contact": "3435234134",
       "check": true,
       "id": "bb149404-589a-ed3c-4256-2d13daff3c52"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "",
-      "check": true,
-      "id": "76eeb238-9455-4f27-6f90-509d244a9a04"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "sdfd",
-      "check": true,
-      "id": "7f5978f6-4313-c960-1aaa-3bff4c15e685"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "sdfd",
-      "check": true,
-      "id": "5878dda9-cc50-d291-54a7-3c1b859de6bb"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "sdfd",
-      "check": true,
-      "id": "af5426fd-89ea-9d93-83bd-a27ab6746d2d"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "csfd",
-      "check": false,
-      "id": "f54587ad-fcb6-9b34-1196-373d5566d1cc"
     }
   ]
 }
