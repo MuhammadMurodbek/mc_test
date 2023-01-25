@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useDispatch } from 'react-redux';
 import uuid from 'react-uuid';
+import { postLogin } from '../../../../redux/actions/login';
 import { getMemberRequest } from '../../../_helpers/get.member';
 import { updateMemberRequest } from '../../../_helpers/update.member';
 import { ModalStateProps } from './index';
@@ -19,7 +21,7 @@ interface TStateModal {
 }
 
 function ModalRemove({ modalState, setModalState }: TPropsModal) {
-
+	const dispatch = useDispatch()
 	const [loading, setLoading] = useState<boolean>(false)
 	const [state, setState] = useState<TStateModal | null>(null)
 
@@ -32,13 +34,17 @@ function ModalRemove({ modalState, setModalState }: TPropsModal) {
 	const handleFormData = (name: string, value: string | boolean) => {
         setState((prev: TStateModal | null) => { return { ...prev, id:uuid(), [name]: value } })
     }
-   
+	const handleReload = () => {
+		setLoading(false)
+		handleClose()
+		dispatch(postLogin())
+	}
 	const handleClose = () =>
 		setModalState((prev) => {
 			return { ...prev, open: false };
 		});
 	const handleUpdate = () => {
-		updateMemberRequest(modalState?.id, state, setLoading)
+		updateMemberRequest(modalState?.id, state, setLoading, handleReload)
 	}
 	return (
 		<>
@@ -60,6 +66,7 @@ function ModalRemove({ modalState, setModalState }: TPropsModal) {
 						Close
 					</Button>
 					<Button variant="primary" onClick={handleUpdate}>
+						{loading && <i className="fa fa-spinner fa-spin"></i>}
 						Save Changes
 					</Button>
 				</Modal.Footer>

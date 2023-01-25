@@ -1,45 +1,11 @@
 {
   "usersall": [
     {
-      "name": "eeeeeeeeee",
-      "email": "murodmuhammad277@gmail.com",
-      "contact": "asdf",
-      "id": 232133
-    },
-    {
-      "name": "Murodbek",
-      "email": "murodmuhammad277@gmail.com",
-      "contact": "contact",
-      "check": true,
-      "id": 232134
-    },
-    {
-      "name": "Nodir",
-      "email": "murodmuhammad277@gmail.com",
-      "contact": "23435235",
-      "id": "f4608c23-d81f-fe9e-b05c-072804c0d9b0",
-      "check": true
-    },
-    {
-      "name": "sdfsdfgsddggfsdgdgd",
+      "name": "sdfsdfgsddggfsdgdgdrtrtrt",
       "email": "murodmuhammad277@gmail.com",
       "contact": "dfgfdsgg",
       "check": true,
       "id": "c3d883a3-eec4-656f-b43f-64d9613afaea"
-    },
-    {
-      "name": "SDFASF",
-      "email": "murodmuhammad277@gmail.com",
-      "contact": "ASDFSADF",
-      "check": false,
-      "id": "fa6383bd-1536-11c0-02e7-c95542da11be"
-    },
-    {
-      "name": "azim",
-      "email": "murodmuhammad277@gmail.com",
-      "contact": "new",
-      "check": false,
-      "id": "7b8dc21a-aa8b-ce5e-a555-73913863c8a1"
     },
     {
       "name": "asadulloh",

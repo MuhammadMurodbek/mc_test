@@ -1,6 +1,8 @@
 import React,{useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import { useDispatch } from 'react-redux';
+import { postLogin } from '../../../../redux/actions/login';
 import { removeMemberRequest } from '../../../_helpers/remove.member';
 import { ModalStateProps } from './index';
 
@@ -10,14 +12,19 @@ interface TPropsModal {
 }
 
 function ModalRemove({ modalState, setModalState }: TPropsModal) {
+	const dispatch = useDispatch()
 	const [loading, setLoading] = useState<boolean>(false)
 	const handleClose = () =>
 		setModalState((prev) => {
 			return { ...prev, open: false };
 		});
+	const handleReload = () => {
+		setLoading(false)
+		handleClose()
+		dispatch(postLogin())
+	}
 	const handleDelete = () => {
-		console.log(modalState)
-		removeMemberRequest(modalState?.id, setLoading)
+		removeMemberRequest(modalState?.id, setLoading, handleReload)
 	}
 
 	return (
@@ -32,6 +39,7 @@ function ModalRemove({ modalState, setModalState }: TPropsModal) {
 						Close
 					</Button>
 					<Button variant="primary" onClick={handleDelete}>
+						{loading && <i className="fa fa-spinner fa-spin"></i>}
 						Remove anyway
 					</Button>
 				</Modal.Footer>
