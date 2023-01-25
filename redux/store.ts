@@ -8,7 +8,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const middlewares = [sagaMiddleware];
 
-const initialState = {};
+// const initialState = {};
 
 const store = createStore(
 	rootReducer,

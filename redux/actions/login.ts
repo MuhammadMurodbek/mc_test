@@ -1,10 +1,9 @@
 import { constantActions } from "../config/constants";
 const {LOGIN_START, LOGIN_FAIL, LOGIN_SUCCESS} = constantActions
 
-export const postLogin = (data:any) => {
+export const postLogin = () => {
     return {
         type: LOGIN_START,
-        payload: data,
     };
 };
 

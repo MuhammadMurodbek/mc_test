@@ -7,10 +7,16 @@ import {
 import Search from './search';
 import List from './list';
 import ModalAdd from './add.member';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { postLogin } from '../../../redux/actions/login';
 
 const Dashboard = () => {
-
+	// const dispatch = useDispatch()
+	// useEffect(()=>{
+	// 	dispatch(postLogin())
+	// 	console.log('------')
+	// },[])
 	const [showModalAdd, setShowModalAdd] = useState<boolean>(false);
 	
 	return (
