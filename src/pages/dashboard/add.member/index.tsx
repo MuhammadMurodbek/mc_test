@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import uuid from 'react-uuid';
 import { addMemberRequest } from '../../../_helpers/add.member';
 
 interface TPropsModal {
@@ -19,7 +20,7 @@ function ModalAdd({ modalState, setModalState }: TPropsModal) {
     const [loading, setLoading] = useState<boolean>(false)
     const handleClose = () => setModalState(false);
     const handleFormData = (name: string, value: string | boolean) => {
-        setState((prev: TStateModal) => { return { ...prev, [name]: value } })
+        setState((prev: TStateModal) => { return { ...prev, id:uuid(), [name]: value } })
     }
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()

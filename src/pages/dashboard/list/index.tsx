@@ -7,7 +7,7 @@ import {postLogin} from "../../../../redux/actions/login"
 
 export type ModalStateProps = {
 	open: boolean;
-	id: string | null;
+	id: string | number;
 };
 
 const ListData = () => {
@@ -17,28 +17,25 @@ const ListData = () => {
 
 	const listData = (state:any)=>state?.loginPostReducer
 	const selector = useSelector(listData)
-	console.log(selector?.loginSuccessData)
-
-	
 
 	const [showModalRemove, setShowModalRemove] = useState<ModalStateProps>({
 		open: false,
-		id: null,
+		id: 0,
 	});
 	const [showModalEdit, setShowModalEdit] = useState<ModalStateProps>({
 		open: false,
-		id: null,
+		id: 0,
 	});
 
-	const handleCloseRemove = () =>
+	const handleCloseRemove = (id:string | number) =>{
 		setShowModalRemove((prev) => {
-			return { ...prev, open: true };
-		});
+			return { ...prev, id:id, open: true };
+		})};
 	const handleShowEdit = () =>
 		setShowModalEdit((prev) => {
 			return { ...prev, open: true };
 		});
-
+	
 	return (
 		<div>
 			<ul className="list-group">
@@ -61,10 +58,10 @@ const ListData = () => {
 							<div>{item?.status}</div>
 							<div>Operation</div>
 							<div className="d-flex gap-1">
-								<Button onClick={handleCloseRemove}>
+								<Button onClick={handleShowEdit}>
 									<i className="fa fa-pencil" />
 								</Button>
-								<Button onClick={handleShowEdit}>
+								<Button onClick={()=>handleCloseRemove(item?.id)}>
 									<i className="fa fa-trash" />
 								</Button>
 							</div>
@@ -73,12 +70,12 @@ const ListData = () => {
 				}
 			</ul>
 			<ModalEdit
-				modalState={showModalRemove}
-				setModalState={setShowModalRemove}
-			/>
-			<ModalRemove
 				modalState={showModalEdit}
 				setModalState={setShowModalEdit}
+			/>
+			<ModalRemove
+				modalState={showModalRemove}
+				setModalState={setShowModalRemove}
 			/>
 		</div>
 	);
