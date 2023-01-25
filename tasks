@@ -1,0 +1,31 @@
+//----------//-----------//-----------//-----------//-------------//-----------//
+
+// const countsRepeatedValues = {};
+// const arrayList = [2, 3, 5, 5];
+// arrayList.forEach( (x)=> {
+//   countsRepeatedValues[x] = (countsRepeatedValues[x] || 0) + 1;
+// });
+// console.log(countsRepeatedValues)
+
+//----------//-----------//-----------//-----------//-------------//-----------//
+
+// let checkBrackets = task => {
+//   let filteredTask = task
+//     .split('')
+//     .filter(item => item === ')' || item === '(')
+//     .join('');
+//   let map = {
+//     ')': '(',
+//   };
+//   let arrayChecker = [];
+
+//   for (let i = 0; i < filteredTask.length; i++) {
+//     if (filteredTask[i] === '(') {
+//       arrayChecker.push(filteredTask[i]);
+//     } else if (arrayChecker[arrayChecker.length - 1] === map[filteredTask[i]]) {
+//       arrayChecker.pop();
+//     } else return false;
+//   }
+//   return !arrayChecker.length;
+// };
+// console.log(checkBrackets('((2 + 3) + 5'));
