@@ -6,8 +6,13 @@ import {
 } from 'react-bootstrap';
 import Search from './search';
 import List from './list';
+import ModalAdd from './add.member';
+import { useState } from 'react';
 
 const Dashboard = () => {
+
+	const [showModalAdd, setShowModalAdd] = useState<boolean>(false);
+	
 	return (
 		<Container className="px-4 py-3">
 			<div className="d-flex align-items-center justify-content-between">
@@ -22,8 +27,12 @@ const Dashboard = () => {
 					</ToggleButtonGroup>
 				</div>
 				<div>
-					<Button>add member</Button>
+					<Button onClick={()=>setShowModalAdd(true)}>add member</Button>
 				</div>
+				<ModalAdd
+					modalState={showModalAdd}
+					setModalState={setShowModalAdd}
+				/>
 			</div>
 			<Search />
 			<List />
