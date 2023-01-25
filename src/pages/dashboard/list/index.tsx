@@ -38,37 +38,43 @@ const ListData = () => {
 	}
 	return (
 		<div>
-			<ul className="list-group">
-				<li className="list-group-item d-flex justify-content-between">
-					<div>Photo</div>
-					<div>Member name</div>
-					<div>Mobile</div>
-					<div>Email</div>
-					<div>Status</div>
-					<div>Operation</div>
-					<div>Action</div>
-				</li>
-				{
-					selector?.loginSuccessData?.map((item:any,index:number)=>(
-						<li key={index} className="list-group-item d-flex justify-content-between">
-							<div>Photo</div>
-							<div>{item.name}</div>
-							<div>{item.contact}</div>
-							<div>{item.email}</div>
-							<div>{item?.status}</div>
-							<div>Operation</div>
-							<div className="d-flex gap-1">
-								<Button onClick={()=>handleShowEdit(item?.id)}>
-									<i className="fa fa-pencil" />
-								</Button>
-								<Button onClick={()=>handleCloseRemove(item?.id)}>
-									<i className="fa fa-trash" />
-								</Button>
-							</div>
-						</li>
-					))
-				}
-			</ul>
+			<table className="table table-bordered">
+				<thead>
+					<tr>
+						<th scope="col">Photo</th>
+						<th scope="col">Member</th>
+						<th scope="col">Mobile</th>
+						<th scope="col">Email</th>
+						<th scope="col">Status</th>
+						<th scope="col">Operation</th>
+						<th scope="col">Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						selector?.loginSuccessData?.map((item:any,index:number)=>(
+							<tr key={index}>
+								<th scope="row">Photo</th>
+								<td>{item?.name}</td>
+								<td>{item?.contact}</td>
+								<td>{item?.email}</td>
+								<td>{item?.check ? 'Active':'Inactive'}</td>
+								<td>2 m</td>
+								<td>
+									<div className=" d-flex gap-1 mx-1">
+										<Button onClick={()=>handleShowEdit(item?.id)}>
+											<i className="fa fa-pencil" />
+										</Button>
+										<Button onClick={()=>handleCloseRemove(item?.id)}>
+											<i className="fa fa-trash" />
+										</Button>
+									</div>
+								</td>
+							</tr>
+						))
+					}
+				</tbody>
+			</table>
 			<ModalEdit
 				modalState={showModalEdit}
 				setModalState={setShowModalEdit}

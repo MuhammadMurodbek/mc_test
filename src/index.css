@@ -9,3 +9,7 @@
 .main_back_color{
   background: #51438F;
 }
+.flex-grow{
+  flex: 1 !important;
+  text-align: left;
+}

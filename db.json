@@ -1,13 +1,6 @@
 {
   "usersall": [
     {
-      "id": 232132,
-      "name": "jsdfjadsfs",
-      "email": "eadafsfsdfsaf",
-      "contact": "998993334455",
-      "status": true
-    },
-    {
       "name": "eeeeeeeeee",
       "email": "murodmuhammad277@gmail.com",
       "contact": "asdf",
@@ -26,6 +19,20 @@
       "contact": "23435235",
       "id": "f4608c23-d81f-fe9e-b05c-072804c0d9b0",
       "check": true
+    },
+    {
+      "name": "sdfsdfgsddggfsdgdgd",
+      "email": "murodmuhammad277@gmail.com",
+      "contact": "dfgfdsgg",
+      "check": true,
+      "id": "c3d883a3-eec4-656f-b43f-64d9613afaea"
+    },
+    {
+      "name": "SDFASF",
+      "email": "murodmuhammad277@gmail.com",
+      "contact": "ASDFSADF",
+      "check": false,
+      "id": "fa6383bd-1536-11c0-02e7-c95542da11be"
     }
   ]
 }

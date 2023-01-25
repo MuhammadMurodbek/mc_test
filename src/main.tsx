@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 import './index.css';
 import AuthPage from './pages/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +13,7 @@ import store from '../redux/store';
 const mappedRouter = [
 	{
 		path: '/',
-		element: <App />,
+		element: <Navigate to="/login" replace />,
 	},
 	{
 		path: '/login',
