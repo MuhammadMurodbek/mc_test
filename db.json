@@ -1,4 +1,9 @@
 {
+  "login": {
+    "name": "asdf",
+    "contact": "asdf",
+    "email": "murodmuhammad277@gmail.com"
+  },
   "usersall": [
     {
       "name": "asadulloh",
@@ -11,43 +16,8 @@
       "name": "",
       "email": "",
       "contact": "",
-      "check": false,
-      "id": "ZK-j-Sp"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "",
-      "check": false,
-      "id": "1eU32uK"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "",
-      "check": false,
-      "id": "oQHtowX"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "",
       "check": true,
       "id": "76eeb238-9455-4f27-6f90-509d244a9a04"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "",
-      "check": true,
-      "id": "054d526b-e72a-edee-b5b2-01af4d231369"
-    },
-    {
-      "name": "",
-      "email": "",
-      "contact": "sdfd",
-      "check": true,
-      "id": "dc07d878-3c31-7515-fd8e-f3c763f179ac"
     },
     {
       "name": "",

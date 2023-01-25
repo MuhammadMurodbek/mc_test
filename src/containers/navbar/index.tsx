@@ -1,6 +1,7 @@
 import Navbar from 'react-bootstrap/Navbar';
 import image from '../../assets/av_rm.png';
 function TextLinkExample() {
+  const credentials = JSON.parse(localStorage.getItem('credentials') || '{}');
   return (
     <Navbar className="position-relative main_back_color">
       <div className="d-flex w-100 justify-content-between px-3 py-1">
@@ -12,7 +13,7 @@ function TextLinkExample() {
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text className="text-white d-flex align-items-center">
             <img src={image} alt="sa" className="image_avatar" />
-            <span className="p-0">Mark Otto</span>
+            <span className="p-0">{credentials?.name}</span>
           </Navbar.Text>
         </Navbar.Collapse>
       </div>

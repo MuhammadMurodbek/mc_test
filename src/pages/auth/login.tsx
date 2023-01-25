@@ -22,6 +22,7 @@ const LoginSchema = () => {
         }}
         validationSchema={SignupSchema}
         onSubmit={values => {
+          localStorage.setItem('credentials', JSON.stringify(values));
           loginRequest(values, setLoading, navigate);
         }}
       >
