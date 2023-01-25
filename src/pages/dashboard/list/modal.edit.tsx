@@ -7,18 +7,7 @@ import uuid from 'react-uuid';
 import { actionStart } from '../../../../redux/actions/login';
 import { getMemberRequest } from '../../../_helpers/get.member';
 import { updateMemberRequest } from '../../../_helpers/update.member';
-import { ModalStateProps } from './index';
-
-interface TPropsModal {
-	modalState: ModalStateProps;
-	setModalState: React.Dispatch<React.SetStateAction<ModalStateProps>>;
-}
-interface TStateModal {
-    name?: string;
-    email?: string;
-    contact?: string;
-    check?:boolean
-}
+import { TPropsModal, TStateModal } from '../../../utils/types';
 
 function ModalRemove({ modalState, setModalState }: TPropsModal) {
 	const dispatch = useDispatch()

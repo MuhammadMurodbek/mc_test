@@ -1,11 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-
-export const head_token = {
-	headers: {
-		'Content-Type': 'application/json',
-	},
-};
+import { header } from './constants';
 
 export const addMemberRequest = async (
 	data: any,
@@ -14,7 +9,7 @@ export const addMemberRequest = async (
 ) => {
 	setLoading(true);
 	return await axios
-		.post(`http://localhost:3000/usersall`, data, head_token)
+		.post(`${import.meta.env.VITE_REACT_HOST_URL}/usersall`, data, header)
 		.then(() => {toast.success('Successfully added')})
 		.catch((err) => console.log(err.response))
 		.finally(() => submitFunction());

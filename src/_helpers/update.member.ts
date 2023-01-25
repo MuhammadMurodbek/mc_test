@@ -1,11 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-
-export const head_token = {
-	headers: {
-		'Content-Type': 'application/json',
-	},
-};
+import { header } from './constants';
 
 export const updateMemberRequest = async (
     id:string | number,
@@ -15,7 +10,7 @@ export const updateMemberRequest = async (
 ) => {
 	setLoading(true);
 	return await axios
-		.put(`http://localhost:3000/usersall/${id}`, data, head_token)
+		.put(`${import.meta.env.VITE_REACT_HOST_URL}/usersall/${id}`, data, header)
 		.then(() => {toast.success('Successfully edited')})
 		.catch((err) => toast.error('Something went wrong'))
 		.finally(() => handleReload());

@@ -1,11 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
-
-export const head_token = {
-	headers: {
-		'Content-Type': 'application/json',
-	},
-};
+import { header } from './constants';
 
 export const removeMemberRequest = async (
 	id: string | number,
@@ -14,7 +9,7 @@ export const removeMemberRequest = async (
 ) => {
 	setLoading(true);
 	return await axios
-		.delete(`http://localhost:3000/usersall/${id}`, head_token)
+		.delete(`${import.meta.env.VITE_REACT_HOST_URL}/usersall/${id}`, header)
 		.then(() => {toast.success('Successfully deleted')})
 		.catch(() => toast.error('Something went wrong'))
 		.finally(() => handleReload());

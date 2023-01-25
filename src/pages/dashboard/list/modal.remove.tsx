@@ -4,12 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
 import { actionStart } from '../../../../redux/actions/login';
 import { removeMemberRequest } from '../../../_helpers/remove.member';
-import { ModalStateProps } from './index';
-
-interface TPropsModal {
-	modalState: ModalStateProps;
-	setModalState: React.Dispatch<React.SetStateAction<ModalStateProps>>;
-}
+import { TPropsModal } from '../../../utils/types';
 
 function ModalRemove({ modalState, setModalState }: TPropsModal) {
 	const dispatch = useDispatch()

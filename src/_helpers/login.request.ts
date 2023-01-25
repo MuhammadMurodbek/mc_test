@@ -1,10 +1,5 @@
 import axios from 'axios';
-
-export const head_token = {
-	headers: {
-		'Content-Type': 'application/json',
-	},
-};
+import { header } from './constants';
 
 export const loginRequest = async (
 	data: any,
@@ -13,7 +8,7 @@ export const loginRequest = async (
 ) => {
 	setLoading(true);
 	return await axios
-		.post(`https://jsonplaceholder.typicode.com/posts`, data, head_token)
+		.post(`${import.meta.env.VITE_REACT_HOST_URL}/posts`, data, header)
 		.then((res) => navigate('/users'))
 		.catch((err) => console.log(err.response))
 		.finally(() => setLoading(false));

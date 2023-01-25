@@ -4,13 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
 import { actionStart } from '../../../../redux/actions/login';
 import { CleanObj } from '../../../_helpers/query.maker';
-
-interface TStateModal {
-	name?: string;
-	email?: string;
-	contact?: string;
-	check?: boolean
-}
+import { TStateModal } from '../../../utils/types';
 
 const SearchField = () => {
 	const dispatch = useDispatch()

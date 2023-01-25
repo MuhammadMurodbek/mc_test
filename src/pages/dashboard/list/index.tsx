@@ -6,11 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actionStart } from "../../../../redux/actions/login"
 import ImageContainer from '../../../containers/image';
 import Status from '../../../containers/status';
-
-export type ModalStateProps = {
-	open: boolean;
-	id: string | number;
-};
+import { ModalStateProps } from '../../../utils/types';
 
 const ListData = () => {
 

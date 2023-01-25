@@ -1,10 +1,5 @@
 import axios from 'axios';
-
-export const head_token = {
-	headers: {
-		'Content-Type': 'application/json',
-	},
-};
+import { header } from './constants';
 
 export const getMemberRequest = async (
 	id: string | number,
@@ -13,7 +8,7 @@ export const getMemberRequest = async (
 ) => {
 	setLoading(true);
 	return await axios
-		.get(`http://localhost:3000/usersall/${id}`, head_token)
+		.get(`${import.meta.env.VITE_REACT_HOST_URL}/usersall/${id}`, header)
 		.then(res => setState(res?.data))
 		.catch((err) => console.log(err.response))
 		.finally(() => setLoading(false));
