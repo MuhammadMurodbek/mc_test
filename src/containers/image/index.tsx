@@ -1,4 +1,3 @@
-import React from 'react'
 import avatar from "../../assets/av_rm.png"
 const ImageContainer = () => {
   return (

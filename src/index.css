@@ -16,6 +16,10 @@ body{
   width: 60px;
   height: auto;
 }
+.image_avatar{
+  width: 50px;
+  height: auto;
+}
 .nav-link{
   border-radius: 0 !important;
   padding: 10px !important;
