@@ -1,9 +1,9 @@
 import React from 'react'
-
-const ImageContainer = (src:string) => {
+import avatar from "../../assets/av_rm.png"
+const ImageContainer = () => {
   return (
-    <div>
-        <img src={src} alt="image" />
+    <div className='image_wrapper'>
+        <img src={avatar} alt="image"/>
     </div>
   )
 }

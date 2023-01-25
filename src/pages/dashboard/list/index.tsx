@@ -4,6 +4,8 @@ import ModalEdit from './modal.edit';
 import ModalRemove from './modal.remove';
 import { useDispatch, useSelector } from 'react-redux';
 import {postLogin} from "../../../../redux/actions/login"
+import ImageContainer from '../../../containers/image';
+import Status from '../../../containers/status';
 
 export type ModalStateProps = {
 	open: boolean;
@@ -54,11 +56,11 @@ const ListData = () => {
 					{
 						selector?.loginSuccessData?.map((item:any,index:number)=>(
 							<tr key={index}>
-								<th scope="row">Photo</th>
+								<td scope="row"><ImageContainer/></td>
 								<td>{item?.name}</td>
 								<td>{item?.contact}</td>
 								<td>{item?.email}</td>
-								<td>{item?.check ? 'Active':'Inactive'}</td>
+								<td><Status status={item?.check}/></td>
 								<td>2 m</td>
 								<td>
 									<div className=" d-flex gap-1 mx-1">

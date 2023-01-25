@@ -4,9 +4,17 @@
 body{
   background: rgb(248, 245, 245) !important;
 }
-th{
-  font-size: 16px;
-  font-weight: bolder;
+
+.image_wrapper{
+  width: 60px;
+  height:50px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.image_wrapper img{
+  width: 60px;
+  height: auto;
 }
 .nav-link{
   border-radius: 0 !important;
