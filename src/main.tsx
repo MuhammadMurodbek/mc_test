@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from 'react-router-dom';
 import './index.css';
 import AuthPage from './pages/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,36 +15,36 @@ import { Provider } from 'react-redux';
 import store from '../redux/store';
 
 const mappedRouter = [
-	{
-		path: '/',
-		element: <Navigate to="/login" replace />,
-	},
-	{
-		path: '/login',
-		element: <AuthPage />,
-	},
-	{
-		path: '/users',
-		element: <Dashboard />,
-	},
-	{
-		path: '*',
-		element: <NotFound />,
-	},
-].map((item) => {
-	if (item.path === '/login') return item;
-	return {
-		...item,
-		element: <Layout>{item.element}</Layout>,
-	};
+  {
+    path: '/',
+    element: <Navigate to="/login" replace />,
+  },
+  {
+    path: '/login',
+    element: <AuthPage />,
+  },
+  {
+    path: '/users',
+    element: <Dashboard />,
+  },
+  {
+    path: '*',
+    element: <NotFound />,
+  },
+].map(item => {
+  if (item.path === '/login') return item;
+  return {
+    ...item,
+    element: <Layout>{item.element}</Layout>,
+  };
 });
 
 const router = createBrowserRouter(mappedRouter);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<React.StrictMode>
-		<Provider store={store}>
-			<RouterProvider router={router} />
-		</Provider>
-	</React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  </React.StrictMode>
 );
