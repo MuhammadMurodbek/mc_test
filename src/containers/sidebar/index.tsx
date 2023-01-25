@@ -4,7 +4,7 @@ import "./index.css"
 const navList = [
   {
     to:'/profile',
-    name:'Profile'
+    name:'Profile',
   },
   {
     to:'/users',
@@ -23,7 +23,10 @@ const Sidebar = () => {
         {
           navList.map(item=>{
             return <NavLink 
-              className={({ isActive }) => (isActive ? 'active' : 'inactive')}  
+              key={item.to}
+              className={
+                ({ isActive }) => (isActive ? 'active_link nav_link' : 'inactive nav_link')
+              }  
               to={item.to} >
                 {item.name}
               </NavLink>

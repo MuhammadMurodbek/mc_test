@@ -1,4 +1,6 @@
 import { Button, Container, ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
+import Search from "./search"
+import List from "./list"
 
 const Dashboard = () => {
   return (
@@ -16,6 +18,8 @@ const Dashboard = () => {
         </div>
         <div><Button>add member</Button></div>
       </div>
+      <Search/>
+      <List/>
     </Container>
   )
 }

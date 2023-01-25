@@ -11,6 +11,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from "./pages/dashboard";
 import Layout from "./containers/layout";
 import NotFound from "./pages/not.found";
+import { Provider } from 'react-redux'
+import store from '../redux/store';
 
 const mappedRouter = [
   {
@@ -41,6 +43,8 @@ const router = createBrowserRouter(mappedRouter);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

@@ -1,9 +1,20 @@
 .sidebar{
-    max-width: 400px;
-    min-width: 360px;
+    max-width: 320px;
+    min-width: 300px;
     height: 100vh;
     background: #51438F;
 }
-/* .active{
-    background: red !important;
-} */
+.active_link{
+    border-left: 3px solid red !important;
+    transition: all ease-in-out 0.4s;
+}
+.nav_link{
+    text-decoration: none;
+    padding: 10px 15px;
+    color:#fff;
+    border-left: 3px solid transparent ;
+    transition: all ease-in-out 0.4s;
+}
+.nav_link:hover{
+    color: #fff !important;
+}

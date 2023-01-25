@@ -1,6 +1,6 @@
-/* .active{
-  background: #B2A8DE !important;
-} */
+*{
+  font-family: 'Poppins', 'san-serif';
+}
 .nav-link{
   border-radius: 0 !important;
   padding: 10px !important;

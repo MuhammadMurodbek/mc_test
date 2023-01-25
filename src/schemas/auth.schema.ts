@@ -4,11 +4,11 @@ export const SignupSchema = Yup.object().shape({
     name: Yup.string()
       .min(2, 'Too Short!')
       .max(70, 'Too Long!')
-      .required('Required'),
+      .required('Name is required'),
     contact: Yup.string()
         .max(13)
-        .required('reqired'),
+        .required('Contact is required'),
     email: Yup.string()
       .email('Invalid email')
-      .required('Required'),
+      .required('Email is required'),
   });
