@@ -33,7 +33,7 @@ const Dashboard = () => {
 					</ToggleButtonGroup>
 				</div>
 				<div>
-					<Button onClick={()=>setShowModalAdd(true)}>add member</Button>
+					<Button onClick={()=>setShowModalAdd(true)}>Add member</Button>
 				</div>
 				<ModalAdd
 					modalState={showModalAdd}

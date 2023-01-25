@@ -15,7 +15,7 @@ export const addMemberRequest = async (
 	setLoading(true);
 	return await axios
 		.post(`http://localhost:3000/usersall`, data, head_token)
-		.then(() => {toast('Successfully added')})
+		.then(() => {toast.success('Successfully added')})
 		.catch((err) => console.log(err.response))
 		.finally(() => submitFunction());
 };
