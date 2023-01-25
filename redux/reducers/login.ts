@@ -1,5 +1,5 @@
 import { constantActions } from '../config/constants';
-const { LOGIN_FAIL, LOGIN_START, LOGIN_SUCCESS } = constantActions;
+const { LOGIN_FAIL, LOGIN_START, LOGIN_SUCCESS, LOGIN_SEARCH } = constantActions;
 
 const initialState = {
 	loginStart: false,
@@ -21,6 +21,12 @@ const loginPostReducer = (state = initialState, action: any) => {
 			return {
 				...state,
 				loginStart: true,
+			};
+		case LOGIN_SEARCH:
+			return {
+				...state,
+				loginStart: true,
+				query:action?.query,
 			};
 		case LOGIN_SUCCESS:
 			return {

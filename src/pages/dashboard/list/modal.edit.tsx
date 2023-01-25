@@ -32,16 +32,12 @@ function ModalRemove({ modalState, setModalState }: TPropsModal) {
 	const handleFormData = (name: string, value: string | boolean) => {
         setState((prev: TStateModal | null) => { return { ...prev, id:uuid(), [name]: value } })
     }
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        // addMemberRequest(state, setLoading)
-    }
+   
 	const handleClose = () =>
 		setModalState((prev) => {
 			return { ...prev, open: false };
 		});
 	const handleUpdate = () => {
-		console.log(state)
 		updateMemberRequest(modalState?.id, state, setLoading)
 	}
 	return (

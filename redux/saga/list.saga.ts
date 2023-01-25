@@ -12,9 +12,11 @@ export interface ResponseGenerator{
     statusText?:string
 }
 const {LOGIN_START} = constantActions
-export function* getArticles({ payload }:any) {
+export function* getArticles({ payload, query }:any) {
     try {
-        const response:ResponseGenerator = yield api.request.get("http://localhost:3000/usersall", {
+        const url = query?.length ? `http://localhost:3000/usersall/?${query}`:'http://localhost:3000/usersall/'
+
+        const response:ResponseGenerator = yield api.request.get(url, {
             headers: {
                 "Content-Type": "application/json"
             },
@@ -26,7 +28,6 @@ export function* getArticles({ payload }:any) {
     }
 }
 export function* getArticlesStart() {
-   
     yield takeLatest(LOGIN_START, getArticles);
 }
 
