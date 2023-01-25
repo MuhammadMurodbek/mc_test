@@ -37,9 +37,9 @@ const ListData = () => {
 		});
 	}
 	return (
-		<div>
-			<table className="table table-bordered">
-				<thead>
+		<div className='table-wrapper'>
+			<table className="table table-borderless">
+				<thead className='mb-5 border-bottom'>
 					<tr>
 						<th scope="col">Photo</th>
 						<th scope="col">Member</th>

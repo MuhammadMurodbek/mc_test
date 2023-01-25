@@ -7,7 +7,7 @@ const AuthPage = () => {
 	console.log(import.meta.env.VITE_REACT_BASE_URL);
 	return (
 		<div>
-			<Row className="vh-100 align-items-center justify-content-center">
+			<Row className="vh-100 align-items-center justify-content-center bg-white">
 				<Col lg={6}>
 					<ValidationSchema />
 				</Col>

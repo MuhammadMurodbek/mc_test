@@ -1,6 +1,13 @@
 *{
   font-family: 'Poppins', 'san-serif';
 }
+body{
+  background: rgb(248, 245, 245) !important;
+}
+th{
+  font-size: 16px;
+  font-weight: bolder;
+}
 .nav-link{
   border-radius: 0 !important;
   padding: 10px !important;
@@ -12,4 +19,10 @@
 .flex-grow{
   flex: 1 !important;
   text-align: left;
+}
+.table-wrapper{
+  padding:4px 8px;
+  border-radius: 10px;
+  background: rgb(255, 255, 255) !important;
+  box-shadow: 0 0 13px -2px #ccc;
 }
