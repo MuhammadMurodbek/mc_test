@@ -30,10 +30,12 @@ function ModalRemove({ modalState, setModalState }: TPropsModal) {
     handleClose();
     dispatch(actionStart());
   };
-  const handleClose = () =>
+  const handleClose = () => {
+    setState(null);
     setModalState(prev => {
       return { ...prev, open: false };
     });
+  };
   const handleUpdate = () => {
     updateMemberRequest(modalState?.id, state, setLoading, handleReload);
   };
@@ -42,7 +44,7 @@ function ModalRemove({ modalState, setModalState }: TPropsModal) {
     <>
       <Modal show={modalState.open} onHide={handleClose}>
         <Modal.Header className="px-4" closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Edit</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="d-flex flex-column gap-3 my-4 w-100 p-2">
@@ -65,7 +67,7 @@ function ModalRemove({ modalState, setModalState }: TPropsModal) {
               placeholder="Phone"
             />
             <Form.Check
-              defaultChecked={state?.check || false}
+              checked={state?.check}
               onChange={e => handleFormData('check', e.target.value)}
               type="switch"
               id="custom-switch"

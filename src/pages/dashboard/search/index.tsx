@@ -30,7 +30,15 @@ const SearchField = () => {
     let objQuery = new URLSearchParams(queries).toString();
     dispatch(actionStart(objQuery));
   };
-  const handleReload = () => dispatch(actionStart());
+  const handleReload = () => {
+    setState({
+      name: '',
+      email: '',
+      contact: '',
+      check: false,
+    });
+    dispatch(actionStart());
+  };
   return (
     <div className="d-flex flex-row gap-3 my-4 m-left-auto w-100">
       <Form.Control
