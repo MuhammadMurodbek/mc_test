@@ -28,7 +28,15 @@ function ModalAdd({ modalState, setModalState }: TPropsModal) {
     check: false,
   });
   const [loading, setLoading] = useState<boolean>(false);
-  const handleClose = () => setModalState(false);
+  const handleClose = () => {
+    setState({
+      name: '',
+      email: '',
+      contact: '',
+      check: false,
+    });
+    setModalState(false);
+  };
   const handleFormData = (name: string, value: string | boolean) => {
     setState((prev: TStateModal) => {
       return { ...prev, id: uuid(), [name]: value };
