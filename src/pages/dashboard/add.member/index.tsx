@@ -13,10 +13,11 @@ interface TStateModal {
     name: string;
     email: string;
     contact: string;
+    check:boolean
 }
 
 function ModalAdd({ modalState, setModalState }: TPropsModal) {
-    const [state, setState] = useState<TStateModal>({ name: '', email: '', contact: '' })
+    const [state, setState] = useState<TStateModal>({ name: '', email: '', contact: '', check:false })
     const [loading, setLoading] = useState<boolean>(false)
     const handleClose = () => setModalState(false);
     const handleFormData = (name: string, value: string | boolean) => {

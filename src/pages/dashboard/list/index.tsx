@@ -31,11 +31,11 @@ const ListData = () => {
 		setShowModalRemove((prev) => {
 			return { ...prev, id:id, open: true };
 		})};
-	const handleShowEdit = () =>
+	const handleShowEdit = (id:string | number) =>{
 		setShowModalEdit((prev) => {
-			return { ...prev, open: true };
+			return { ...prev, id:id, open: true };
 		});
-	
+	}
 	return (
 		<div>
 			<ul className="list-group">
@@ -58,7 +58,7 @@ const ListData = () => {
 							<div>{item?.status}</div>
 							<div>Operation</div>
 							<div className="d-flex gap-1">
-								<Button onClick={handleShowEdit}>
+								<Button onClick={()=>handleShowEdit(item?.id)}>
 									<i className="fa fa-pencil" />
 								</Button>
 								<Button onClick={()=>handleCloseRemove(item?.id)}>
