@@ -1,15 +1,15 @@
-import React from 'react'
-import {Route, Routes} from "react-router-dom"
-import Dashboard from './pages/dashboard'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from './pages/dashboard';
 
 const App = () => {
-  return (
-    <div>
-      <Routes>
-        <Route path='/dashboard' element={<Dashboard/>}/>
-      </Routes>
-    </div>
-  )
-}
+	return (
+		<div>
+			<Routes>
+				<Route path="/dashboard" element={<Dashboard />} />
+			</Routes>
+		</div>
+	);
+};
 
-export default App
+export default App;
