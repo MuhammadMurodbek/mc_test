@@ -7,4 +7,5 @@ export const SignupSchema = Yup.object().shape({
     .required('Name is required'),
   contact: Yup.string().max(13).required('Contact is required'),
   email: Yup.string().email('Invalid email').required('Email is required'),
+  check: Yup.boolean(),
 });

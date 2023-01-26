@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { toast } from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
-import uuid from 'react-uuid';
 import { actionStart } from '../../../../redux/actions/login';
-import { addMemberRequest } from '../../../_helpers/add.member';
+import FormAddMember from './form';
 
 interface TPropsModal {
   modalState: boolean;
@@ -37,69 +33,23 @@ function ModalAdd({ modalState, setModalState }: TPropsModal) {
     });
     setModalState(false);
   };
-  const handleFormData = (name: string, value: string | boolean) => {
-    setState((prev: TStateModal) => {
-      return { ...prev, id: uuid(), [name]: value };
-    });
-  };
   const submitFunction = () => {
     handleClose();
     dispatch(actionStart());
     setLoading(false);
   };
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    addMemberRequest(state, setLoading, submitFunction);
-  };
 
   return (
     <>
       <Modal show={modalState} onHide={handleClose}>
-        <Form onSubmit={handleSubmit}>
-          <Modal.Header className="px-4" closeButton>
-            <Modal.Title>Add new member</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="d-flex flex-column gap-3 my-4 w-100 p-2">
-              <Form.Control
-                value={state.name}
-                onChange={e => handleFormData('name', e.target.value)}
-                type="name"
-                placeholder="Name"
-              />
-              <Form.Control
-                value={state.email}
-                onChange={e => handleFormData('email', e.target.value)}
-                type="email"
-                placeholder="Email"
-              />
-              <Form.Control
-                value={state.contact}
-                onChange={e => handleFormData('contact', e.target.value)}
-                type="contact"
-                placeholder="Contact"
-              />
-              <Form.Check
-                value={state.contact}
-                onChange={e => handleFormData('check', e.target.checked)}
-                type="switch"
-                id="custom-switch"
-                label="Status"
-              />
-              <div>load image</div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer className="px-4">
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" type="submit">
-              {loading && <i className="fa fa-spinner fa-spin"></i>}
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Form>
+        <Modal.Header className="px-4" closeButton>
+          <Modal.Title>Add new member</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="d-flex flex-column gap-3 my-4 w-100 p-2">
+            <FormAddMember handleSubmitForm={submitFunction} />
+          </div>
+        </Modal.Body>
       </Modal>
     </>
   );
