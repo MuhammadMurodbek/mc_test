@@ -8,13 +8,6 @@ import { addMemberRequest } from '../../../_helpers/add.member';
 const FormAddMember = ({ handleSubmitForm }: any) => {
   let loginFields: string[] = ['name', 'contact', 'email'];
   const [loading, setLoading] = useState<boolean>(false);
-  //   const onSubmit = async (values: any, formikProps: any) => {
-  //     console.log('onSubmit -> values, formikProps', values, formikProps);
-
-  //     setTimeout(() => {
-  //       console.log('resolved timeout at onSubmit');
-  //     }, 5000);
-  //   };
   return (
     <div>
       <Formik
@@ -27,12 +20,9 @@ const FormAddMember = ({ handleSubmitForm }: any) => {
         validationSchema={SignupSchema}
         onSubmit={async (formsData, { setSubmitting, resetForm }) => {
           setSubmitting(true);
-          // async request
-          // --> if wanted to reset on submit: resetForm();
-          //   resetForm();
-          console.log(formsData);
           setSubmitting(false);
           addMemberRequest(formsData, setLoading, handleSubmitForm);
+          resetForm();
         }}
       >
         {({ handleSubmit, values, setFieldValue, handleChange }) => (

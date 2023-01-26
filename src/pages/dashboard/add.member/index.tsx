@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch } from 'react-redux';
 import { actionStart } from '../../../../redux/actions/login';
@@ -8,35 +8,15 @@ interface TPropsModal {
   modalState: boolean;
   setModalState: React.Dispatch<React.SetStateAction<boolean>>;
 }
-interface TStateModal {
-  name: string;
-  email: string;
-  contact: string;
-  check: boolean;
-}
 
 function ModalAdd({ modalState, setModalState }: TPropsModal) {
   const dispatch = useDispatch();
-  const [state, setState] = useState<TStateModal>({
-    name: '',
-    email: '',
-    contact: '',
-    check: false,
-  });
-  const [loading, setLoading] = useState<boolean>(false);
   const handleClose = () => {
-    setState({
-      name: '',
-      email: '',
-      contact: '',
-      check: false,
-    });
     setModalState(false);
   };
   const submitFunction = () => {
     handleClose();
     dispatch(actionStart());
-    setLoading(false);
   };
 
   return (
