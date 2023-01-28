@@ -27,8 +27,8 @@ const LoginSchema = () => {
         }}
       >
         {() => (
-          <Form className="w-50 mx-auto">
-            <Row className="gap-3">
+          <Form className="w-75 px-2 px-md-5 mx-auto">
+            <Row className="gap-3 px-2">
               {loginFields.map((item: string, index: number) => (
                 <Col key={index} xl={12} className="mt-3">
                   <Field

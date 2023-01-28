@@ -13,7 +13,7 @@ const AuthPage = () => {
         </Col>
         <Col
           lg={6}
-          className="vh-100 d-flex align-items-center justify-content-center image_content"
+          className="d-none vh-100 d-lg-flex align-items-center justify-content-center image_content "
         >
           <ImageSide />
         </Col>
