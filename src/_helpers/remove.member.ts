@@ -13,6 +13,6 @@ export const removeMemberRequest = async (
     .then(() => {
       toast.success('Successfully deleted');
     })
-    .catch(() => toast.error('Something went wrong'))
+    .catch(err => toast.error(`Something went wront: ${err?.message}`))
     .finally(() => handleReload());
 };

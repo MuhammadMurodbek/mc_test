@@ -13,6 +13,6 @@ export const addMemberRequest = async (
     .then(() => {
       toast.success('Successfully added');
     })
-    .catch(err => console.log(err.response))
+    .catch(err => toast.error(`Something went wront: ${err?.message}`))
     .finally(() => submitFunction());
 };

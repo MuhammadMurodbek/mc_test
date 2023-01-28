@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 import { header } from './constants';
 
 export const getMemberRequest = async (
@@ -10,6 +11,6 @@ export const getMemberRequest = async (
   return await axios
     .get(`${import.meta.env.VITE_REACT_HOST_URL}/usersall/${id}`, header)
     .then(res => setState(res?.data))
-    .catch(err => console.log(err.response))
+    .catch(err => toast.error(`Something went wront: ${err?.message}`))
     .finally(() => setLoading(false));
 };

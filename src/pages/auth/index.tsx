@@ -2,6 +2,7 @@ import { Col, Row } from 'react-bootstrap';
 import ImageSide from './image-side';
 import ValidationSchema from './login';
 import './index.style.css';
+import { Toaster } from 'react-hot-toast';
 
 const AuthPage = () => {
   return (
@@ -17,6 +18,7 @@ const AuthPage = () => {
           <ImageSide />
         </Col>
       </Row>
+      <Toaster position="bottom-center" />
     </div>
   );
 };

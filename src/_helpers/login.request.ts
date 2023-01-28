@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-hot-toast';
 import { header } from './constants';
 
 export const loginRequest = async (
@@ -9,7 +10,11 @@ export const loginRequest = async (
   setLoading(true);
   return await axios
     .post(`${import.meta.env.VITE_REACT_HOST_URL}/login`, data, header)
-    .then(res => navigate('/users'))
-    .catch(err => console.log(err.response))
+    .then(() => navigate('/users'))
+    .catch(err => {
+      toast.error(
+        `Something went wrong: \n${err?.message}. \n run: "yarn dev:server"`
+      );
+    })
     .finally(() => setLoading(false));
 };

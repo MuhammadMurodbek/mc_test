@@ -14,6 +14,6 @@ export const updateMemberRequest = async (
     .then(() => {
       toast.success('Successfully edited');
     })
-    .catch(err => toast.error('Something went wrong'))
+    .catch(err => toast.error(`Something went wront: ${err?.message}`))
     .finally(() => handleReload());
 };
