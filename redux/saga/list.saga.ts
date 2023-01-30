@@ -15,10 +15,10 @@ export interface ResponseGenerator {
 const { ACTION_START } = constantActions;
 export function* getArticles({ payload, query }: any) {
   try {
-    const baseUrl = import.meta.env.VITE_REACT_HOST_URL;
+    const baseUrl = `http://localhost:3000/usersall`;
     const url = query?.length
       ? `${baseUrl}/?${query}`
-      : import.meta.env.VITE_REACT_HOST_URL;
+      : `http://localhost:3000/usersall`;
 
     const response: ResponseGenerator = yield api.request.get(url, {
       headers: {
