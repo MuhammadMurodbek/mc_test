@@ -1,7 +1,7 @@
 {
   "login": {
     "name": "Murod",
-    "contact": "asdfdsaf",
+    "contact": "asdf",
     "email": "murodmuhammad277@gmail.com"
   },
   "usersall": [
@@ -9,21 +9,21 @@
       "name": "asadulloh",
       "email": "murodmuhammad277@gmail.com",
       "contact": "3435234134",
-      "check": true,
+      "check": false,
       "id": "bb149404-589a-ed3c-4256-2d13daff3c52"
     },
     {
       "name": "aspairacer@gmail.com",
       "contact": "asdfdsaf",
       "email": "murodmuhammad277@gmail.com",
-      "check": false,
+      "check": true,
       "id": "YC4EzUZ"
     },
     {
       "name": "asdfsdf",
       "contact": "asdfdsaf",
       "email": "murodmuhammad277@gmail.com",
-      "check": false,
+      "check": true,
       "id": "NZW_MpF"
     },
     {
